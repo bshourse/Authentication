@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
 
-    before_action :require_user, except: [:index]
+    before_action :require_user, except: [:index] # требовать, чтобы пользователи входили в систему для всех действий, кроме действия индекса. тут мы решаем проблему при которой для просмотра индивидуальных статей пользователь должен быть залогинен. Метод require_user мы создаем в application_controller
 
     def index
       @articles = Article.all
