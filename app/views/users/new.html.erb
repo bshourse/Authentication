@@ -1,0 +1,17 @@
+<div class="signup">
+  <div class="container">
+
+    <!-- Your form here -->
+    <%= form_for(@user) do |f| %>
+      <div class="field">
+        <%= f.text_field  :first_name %>
+        <%= f.text_field  :last_name %>
+        <%= f.email_field  :email %>
+        <%= f.password_field  :password %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Create" %>
+      </div>
+    <% end %>
+  </div>
+</div>
