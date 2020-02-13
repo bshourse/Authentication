@@ -1,6 +1,6 @@
 <div class="login">
   <div class="container">
-
+    <!-- In the signup form, we used form_for(@user) do |f| since we had a User model to refer to. For the login form, we don’t have a Session model, so we instead use the name of the resource and the corresponding URL with -->
     <%= form_for(:session, url: login_path) do |f| %>
       <%= f.email_field :email, :placeholder => "Email" %>
       <%= f.password_field :password, :placeholder => "Password" %>
