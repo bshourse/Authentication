@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to '/login' unless current_user
   end
 
+  def login_user_to_index
+    redirect_to '/' if current_user
+  end
+
   def require_author # Аналогично метод require_author должен использовать метод current_user, чтобы проверить, является ли пользователь автором, и перенаправить на корневой путь, если он / она не является.
     redirect_to '/' unless current_user.author?
   end

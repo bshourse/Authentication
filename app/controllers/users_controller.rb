@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+   before_action :login_user_to_index
+
   def new
     @user = User.new
   end
