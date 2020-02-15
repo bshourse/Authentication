@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  before_action :login_user_to_index
+
   def new
 
   end
