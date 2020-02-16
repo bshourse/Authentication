@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
    before_action :login_user_to_index, except: [:show]
+   before_action :require_user, except: [:new]
 
   def new
     @user = User.new
