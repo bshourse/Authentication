@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  before_action :login_user_to_index
+  before_action :login_user_to_index, except: [:destroy]
 
   def new
 
