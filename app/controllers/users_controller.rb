@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-   before_action :login_user_to_index
+   before_action :login_user_to_index, except: [:show]
 
   def new
     @user = User.new
@@ -17,4 +17,9 @@ class UsersController < ApplicationController
       redirect_to '/signup'
     end
   end
+
+   def show
+     @user = User.find(session[:user_id])
+   end
+
 end
