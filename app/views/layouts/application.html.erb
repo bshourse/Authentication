@@ -18,8 +18,9 @@
     <div class="nav">
       <% if current_user %> <!-- Если пользователь вошел в систему, показать адрес электронной почты пользователя и ссылку «Logout» -->
         <ul>
-          <li><%= current_user.email %></li> 
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
+          <li><%= current_user.email %></li>
+          <li><%= link_to "Profile", 'profile' %></li>
+          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
         </ul>
       <% else %> <!--Если пользователь вышел из системы, отобразите ссылку «Зарегистрироваться» и ссылку «Войти». -->
         <ul>
