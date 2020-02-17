@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-   before_action :login_user_to_index, except: [:show]
+   before_action :login_user_to_index, except: [:show, :edit, :update]
    before_action :require_user, except: [:new] # Выдавать неавторизованному пользователю страницу с логином, исключение переход на страницу с регистрацией. Делаю это для того чтобы не падала ошибка при попытке неавторизаванного пользователя перейти по ссылке /profile (в контроллере метод show)
 
   def new
@@ -23,4 +23,15 @@ class UsersController < ApplicationController
      @user = User.find(session[:user_id])
    end
 
+   def update
+     @user = User.find(session[:user_id])
+     if @user.update_attributes(user_params)
+       redirect_to(:action => 'show', :id => @user.id)
+       else render 'edit'
+     end
+   end
+
+   def edit
+     @user = User.find(session[:user_id])
+   end
 end
