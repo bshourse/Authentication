@@ -1,0 +1,15 @@
+<div class="user">
+  <div class="container">
+    <%= form_for(@user) do |u|%>
+      <div class="field">
+        <%=u.text_field :first_name %>
+        <%=u.text_field :last_name %>
+        <%=u.email_field :email %>
+        <%=u.password_field :password %>
+      </div>
+      <div class="action">
+        <%= u.submit "Update" %>
+      </div>
+    <% end %>
+  </div>
+</div>
